@@ -10,7 +10,10 @@ const routes = [
     path: "/businesspage",
 
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/BusinessPage.vue") }],
+    children: [
+      { path: "", component: () => import("pages/BusinessPage.vue") },
+      { path: ":id", component: () => import("pages/BusinessDetailsPage.vue") }
+    ]
   },
 
   // Always leave this as last one,
