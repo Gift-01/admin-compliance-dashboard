@@ -1,143 +1,110 @@
-export default [
+export const columns = [
+  {
+    name: "businessName",
+    required: true,
+    label: "Business Name",
+    align: "left",
+    field: "businessName",
+    sortable: true,
+  },
+  {
+    name: "businessId",
+    required: true,
+    label: "Business ID",
+    align: "left",
+    field: "businessId",
+    sortable: true,
+  },
+
+  {
+    name: "VerificationStatus",
+    required: true,
+    label: "Verification Status",
+    align: "left",
+    field: "VerificationStatus",
+    sortable: true,
+  },
+  {
+    name: "businessType",
+    required: true,
+    label: "Business Type",
+    align: "left",
+    field: "businessType",
+    sortable: true,
+  },
+  {
+    name: "Datecreated",
+    required: true,
+    label: "Date Created",
+    align: "left",
+    field: "DateCreated",
+    sortable: true,
+  },
+  // Add more columns as needed
+];
+
+export const items = [
   {
     id: 1,
-    name: "Item 1",
-    description: "Description of Item 1",
-    // Add more properties as needed
+    businessName: "CraftElevate",
+    businessId: "#10004200211",
+    businessType: "Individual Business",
+    VerificationStatus: "Approved",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-approved",
   },
   {
     id: 2,
-    name: "Item 2",
-    description: "Description of Item 2",
-    // Add more properties as needed
+    businessName: "InnovateEmpower",
+    businessId: "#10004200211",
+    VerificationStatus: "Approved",
+    businessType: "Individual Business",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-approved",
   },
-  // Add more items as needed
   {
     id: 3,
-    name: "Item 3",
-    description: "Description of Item 1",
-    // Add more properties as needed
+    businessName: "ImagineBuild",
+    businessId: "#10004200211",
+    businessType: "Partnership",
+    VerificationStatus: "Pending Approval",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-pending",
   },
   {
     id: 4,
-    name: "Item 4",
-    description: "Description of Item 2",
-    // Add more properties as needed
+    businessName: "InnovateExpress",
+    businessId: "#10004200211",
+    businessType: "Registered Company",
+    VerificationStatus: "Approved",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-approved",
   },
-  // Add more items as needed
   {
     id: 5,
-    name: "Item 5",
-    description: "Description of Item 1",
-    // Add more properties as needed
+    businessName: "InspireInvent",
+    businessId: "#10004200211",
+    businessType: "Individual Business",
+    VerificationStatus: "Pending Approval",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-pending",
   },
   {
     id: 6,
-    name: "Item 6",
-    description: "Description of Item 2",
-    // Add more properties as needed
+    businessName: "InspiredRevolution",
+    businessId: "#10004200211",
+    businessType: "Registered Company",
+    VerificationStatus: "Quaried",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-quaried",
   },
-  // Add more items as needed
   {
     id: 7,
-    name: "Item 7",
-    description: "Description of Item 1",
-    // Add more properties as needed
+    businessName: "DesignUnleashed",
+    businessId: "#10004200211",
+    businessType: "Individual Business",
+    VerificationStatus: "Pending Approval",
+    DateCreated: "Aug 12  2020 9.37 AM",
+    statusClass: "status-pending",
   },
-  {
-    id: 8,
-    name: "Item 8",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  // Add more items as needed
-  {
-    id: 9,
-    name: "Item 9",
-    description: "Description of Item 1",
-    // Add more properties as needed
-  },
-  {
-    id: 10,
-    name: "Item 10",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  // Add more items as needed
-  {
-    id: 11,
-    name: "Item 11",
-    description: "Description of Item 1",
-    // Add more properties as needed
-  },
-  {
-    id: 12,
-    name: "Item 12",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  {
-    id: 13,
-    name: "Item 13",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  // Add more items as needed
-  {
-    id: 14,
-    name: "Item 14",
-    description: "Description of Item 1",
-    // Add more properties as needed
-  },
-  {
-    id: 15,
-    name: "Item 15",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  {
-    id: 16,
-    name: "Item 16",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  // Add more items as needed
-  {
-    id: 17,
-    name: "Item 11",
-    description: "Description of Item 1",
-    // Add more properties as needed
-  },
-  {
-    id: 18,
-    name: "Item 18",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  {
-    id: 19,
-    name: "Item 19",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  {
-    id: 20,
-    name: "Item 20",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  // Add more items as needed
-  {
-    id: 21,
-    name: "Item 21",
-    description: "Description of Item 1",
-    // Add more properties as needed
-  },
-  {
-    id: 22,
-    name: "Item 22",
-    description: "Description of Item 2",
-    // Add more properties as needed
-  },
-  // Add more items as needed
 ];
