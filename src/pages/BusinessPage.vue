@@ -1,3 +1,12 @@
 <template>
-  <h1>hello</h1>
+    <div>
+    <BaseBusiness/>
+    </div>
 </template>
+
+<script >
+import BaseBusiness from 'src/components/BusinessUI/BaseBusiness.vue';
+ export default{
+     components:{BaseBusiness}
+ }
+</script>
