@@ -7,6 +7,7 @@
     :rows-per-page-options="[5, 25, 50]"
     pagination="true"
     :filter="filter"
+    @row-click="handleRowClick"
   >
   </q-table>
 </template>
@@ -21,6 +22,12 @@ export default {
       columns,
       filter: "",
     };
+  },
+
+  methods: {
+    handleRowClick(row) {
+      this.$router.push({ path: `businesspage/${row.id}` });
+    },
   },
 
   // computed: {
