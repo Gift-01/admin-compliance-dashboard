@@ -4,7 +4,7 @@
     v-model="model"
     :options="options"
     :label="label"
-    style="width: 10rem"
+    class="input"
   />
 </template>
 
@@ -33,3 +33,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.input {
+  border-radius: 5px;
+}
+</style>

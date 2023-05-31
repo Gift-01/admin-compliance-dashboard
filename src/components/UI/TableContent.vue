@@ -8,6 +8,7 @@
     pagination="true"
     :filter="filter"
     @row-click="handleRowClick"
+    flat
   >
   </q-table>
 </template>

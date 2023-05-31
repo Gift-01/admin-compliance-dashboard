@@ -49,7 +49,6 @@ export default defineComponent({
 }
 .card_container img {
   width: 5rem;
-  margin-top: 1.5rem;
 }
 .card_content {
   display: flex;
@@ -59,9 +58,11 @@ h3 {
   font-size: 1.5rem;
   color: rgba(23, 23, 23, 1);
   transform: translateX(-5rem);
+  padding-top: 1rem;
 }
 p {
   color: rgba(102, 102, 102, 1);
   font-size: 0.8rem;
+  padding-top: 1rem;
 }
 </style>

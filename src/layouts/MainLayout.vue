@@ -12,6 +12,17 @@
         />
 
         <q-toolbar-title class="name_title"> Welcome Sameze</q-toolbar-title>
+
+        <my-select
+          :options="selectOptions"
+          class="input"
+          label="Quick action"
+          style="width: 10rem"
+        />
+        <div class="notification-wrapper">
+          <div class="notification-dot"></div>
+          <q-icon name="notifications" class="notification-icon" />
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -43,6 +54,7 @@ import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import { useRouter } from "vue-router";
 import Logo from "../assets/Logo.svg";
+import MySelect from "../components/UI/TextInput.vue";
 
 const linksList = [
   {
@@ -70,6 +82,7 @@ export default defineComponent({
 
   components: {
     EssentialLink,
+    MySelect,
   },
 
   setup() {
@@ -79,6 +92,13 @@ export default defineComponent({
       Logo,
       essentialLinks: linksList,
       leftDrawerOpen,
+      selectOptions: [
+        "All time",
+        "Today",
+        "yesterday",
+        "Last 7 days",
+        "Custom Duration",
+      ],
       router: useRouter(),
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
@@ -92,8 +112,10 @@ export default defineComponent({
 .header {
   background: rgba(251, 251, 251, 1);
   color: rgba(16, 16, 16, 1);
-
   padding: 16px, 40px, 16px, 40px;
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
 }
 .links {
   margin-top: 2rem;
@@ -111,5 +133,25 @@ export default defineComponent({
 }
 img {
   margin-top: 3rem;
+}
+.input {
+  margin-right: 4rem;
+}
+.notification-icon {
+  color: rgba(16, 16, 16, 1);
+}
+.notification-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -5px; /* Adjust the positioning of the dot as needed */
+  right: -5px; /* Adjust the positioning of the dot as needed */
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
 }
 </style>

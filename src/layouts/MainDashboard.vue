@@ -2,7 +2,12 @@
   <div class="dashboard">
     <div class="hero_heading">
       <p>Business Overview</p>
-      <my-select :options="selectOptions" class="input" label="All time" />
+      <my-select
+        :options="selectOptions"
+        class="input"
+        label="All time"
+        style="width: 10rem"
+      />
     </div>
     <div class="hero_content">
       <HomeCard

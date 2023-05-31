@@ -37,14 +37,13 @@ export default {
   padding: 8px, 12px, 8px, 12px;
 }
 .search_input {
-  width: 23rem;
+  width: 20rem;
   text-align: center;
-  background: rgba(251, 251, 251, 1);
   border-radius: 4px;
   padding: 1rem;
   color: rgba(34, 34, 34, 1);
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 .content h6 {
   color: rgba(34, 34, 34, 1);
