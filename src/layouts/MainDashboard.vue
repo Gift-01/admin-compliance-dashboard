@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <div class="hero_heading">
-      <h5>Business Overview</h5>
+      <p>Business Overview</p>
       <my-select :options="selectOptions" class="input" label="All time" />
     </div>
     <div class="hero_content">
@@ -71,8 +71,27 @@ export default defineComponent({
   flex-direction: row;
   padding-left: 2.5%;
   padding-right: 2.5%;
+  padding: 12px, 16px, 12px, 16px;
+  border-bottom: 1px solid rgba(216, 243, 242, 1);
+  padding-top: 1rem;
+}
+.hero_heading p {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-top: 1.5rem;
 }
 .input {
-  margin-top: 3rem;
+  margin-top: 1rem;
+  padding: 10px, 10px, 10px, 16px;
+  background: linear-gradient(0deg, #ffffff, #ffffff),
+    linear-gradient(0deg, #ced0d0, #ced0d0);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 </style>

@@ -42,18 +42,9 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-.search_btn {
-  width: 23rem;
-  text-align: center;
-  margin-top: 1rem;
-}
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border: 1px solid red;
-  width: 100%;
+  color: rgba(16, 16, 16, 1);
+  font-size: 0.7rem;
+  font-weight: 400;
 }
 
 .status-approved {

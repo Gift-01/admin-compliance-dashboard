@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" class="q-list">
     <q-header elevated class="header">
       <q-toolbar>
         <q-btn
@@ -11,13 +11,17 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Welcome Sameze</q-toolbar-title>
+        <q-toolbar-title class="name_title"> Welcome Sameze</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
-        <q-item-label header> Our Pass </q-item-label>
+        <q-item-label header>
+          <div class="img">
+            <img :src="Logo" alt="logo" />
+          </div>
+        </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -38,6 +42,7 @@
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import { useRouter } from "vue-router";
+import Logo from "../assets/Logo.svg";
 
 const linksList = [
   {
@@ -71,6 +76,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false);
 
     return {
+      Logo,
       essentialLinks: linksList,
       leftDrawerOpen,
       router: useRouter(),
@@ -84,10 +90,26 @@ export default defineComponent({
 
 <style scoped>
 .header {
-  background: transparent;
-  color: black;
+  background: rgba(251, 251, 251, 1);
+  color: rgba(16, 16, 16, 1);
+
+  padding: 16px, 40px, 16px, 40px;
 }
 .links {
   margin-top: 2rem;
+  color: rgba(102, 102, 102, 1);
+  box-shadow: 0px 4px 10px 4px rgba(209, 209, 209, 0.05);
+  font-size: 0.8rem;
+}
+.q-list {
+  background: rgba(251, 251, 251, 1);
+}
+.name_title {
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(16, 16, 16, 1);
+}
+img {
+  margin-top: 3rem;
 }
 </style>

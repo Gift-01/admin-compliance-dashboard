@@ -4,9 +4,11 @@
     <q-input
       v-model="filter"
       debounce="300"
+      color="teal"
+      filled
       outlined
       placeholder="Search using business name or business id"
-      class="q-pa-md search_btn"
+      class="q-pa-md search_input"
     >
       <template v-slot:prepend>
         <q-icon name="search" />
@@ -32,11 +34,21 @@ export default {
   justify-content: space-between;
   margin-left: 2.5%;
   margin-right: 2.5%;
+  padding: 8px, 12px, 8px, 12px;
 }
-
-.search_btn {
+.search_input {
   width: 23rem;
   text-align: center;
-  margin-top: 1rem;
+  background: rgba(251, 251, 251, 1);
+  border-radius: 4px;
+  padding: 1rem;
+  color: rgba(34, 34, 34, 1);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+.content h6 {
+  color: rgba(34, 34, 34, 1);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 </style>
