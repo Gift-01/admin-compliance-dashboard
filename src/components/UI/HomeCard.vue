@@ -1,8 +1,8 @@
 <template>
   <div class="card_container" :style="{ background: backgroundColor }">
     <div class="card_content">
-      <h6>{{ heading }}</h6>
-      <h4>{{ total }}</h4>
+      <p>{{ heading }}</p>
+      <h3>{{ total }}</h3>
     </div>
     <img :src="imageSource" alt="" />
   </div>
@@ -40,19 +40,46 @@ export default defineComponent({
   width: 30%;
   display: flex;
   flex-direction: row;
-  height: 13rem;
+  height: 8rem;
   justify-content: space-between;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-}
-.card_container img {
-  width: 8rem;
+  margin-left: 2%;
+  margin-right: 2%;
   margin-top: 1.5rem;
+  border-radius: 8px;
+
+  @media screen and (max-width: 760px) {
+    justify-content: space-evenly;
+  }
+}
+
+.card_container img {
+  width: 5rem;
+
+  @media screen and (max-width: 760px) {
+    width: 3rem;
+    display: none;
+  }
 }
 .card_content {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   padding-left: 1rem;
+  @media screen and (max-width: 760px) {
+    padding-left: 1.5rem;
+  }
+}
+h3 {
+  font-size: 1.5rem;
+  color: rgba(23, 23, 23, 1);
+  transform: translateX(-5rem);
+  padding-top: 1rem;
+  @media screen and (max-width: 760px) {
+    transform: translateX(-3rem);
+    padding-top: 2rem;
+  }
+}
+p {
+  color: rgba(102, 102, 102, 1);
+  font-size: 0.8rem;
+  padding-top: 1rem;
 }
 </style>

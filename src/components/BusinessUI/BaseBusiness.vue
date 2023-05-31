@@ -19,38 +19,64 @@
       <q-tab name="Queried Approvals" label="Queried Approvals" class="tab" />
     </q-tabs>
     <q-separator inset />
-    <BusinessTableHeader />
+
+    <BusinessTableHeader @customChange="handleCustomChange($event)" />
     <q-tab-panels v-model="this.tab" animated>
       <q-tab-panel name="All businesses">
-        <BaseTable />
+        <BaseTable :rows="this.row" />
       </q-tab-panel>
 
       <q-tab-panel name="Approved businesses">
-        <BaseTable />
+        <BaseTable :rows="this.approved" />
       </q-tab-panel>
 
       <q-tab-panel name="Pending Approval">
-        <BaseTable />
+        <BaseTable :rows="this.pending" />
       </q-tab-panel>
       <q-tab-panel name="Queried Approvals">
-        <BaseTable />
+        <BaseTable :rows="this.queried" />
       </q-tab-panel>
     </q-tab-panels>
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
 import BaseTable from "src/components/UI/BaseTable.vue";
 import BusinessTableHeader from "src/components/BusinessUI/BusinessTableHeader.vue";
-//  const tab=ref('mails')
+import { rows } from "../../baseRow.js";
 
 export default {
+  beforeMount() {
+    this.approved = this.getApproved();
+    this.pending = this.getPending();
+    this.queried = this.getQueried();
+  },
   components: { BaseTable, BusinessTableHeader },
   data() {
     return {
       tab: "All businesses",
+      approved: "",
+      pending: "",
+      queried: "",
+      inputValue: "",
+      row: rows,
     };
+  },
+  methods: {
+    getApproved() {
+      return rows.filter((item) => item.verificationStatus == "Approved");
+    },
+    getPending() {
+      return rows.filter(
+        (item) => item.verificationStatus == "Pending Approval"
+      );
+    },
+    getQueried() {
+      return rows.filter((item) => item.verificationStatus == "Queried");
+    },
+    handleCustomChange(text) {
+      this.inputValue = text;
+    },
   },
 };
 </script>
@@ -58,7 +84,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 2rem;
-}
-.tab {
+
 }
 </style>
