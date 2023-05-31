@@ -130,12 +130,18 @@ export default defineComponent({
   font-weight: 400;
   font-size: 1rem;
   color: rgba(16, 16, 16, 1);
+  @media screen and (max-width: 400px) {
+    font-size: 0.7rem;
+  }
 }
 img {
   margin-top: 3rem;
 }
 .input {
   margin-right: 4rem;
+  @media screen and (max-width: 760px) {
+    margin-right: 0.5rem;
+  }
 }
 .notification-icon {
   color: rgba(16, 16, 16, 1);

@@ -5,10 +5,11 @@
     :columns="columns"
     row-key="id"
     :rows-per-page-options="[5, 25, 50]"
-    pagination="true"
+    :pagination="{ enabled: true }"
     :filter="filter"
     @row-click="handleRowClick"
     flat
+    :style="{ overflowX: 'auto' }"
   >
   </q-table>
 </template>
@@ -47,8 +48,7 @@ export default {
 .content_table {
   margin-left: 2.5%;
   margin-right: 2.5%;
-  display: flex;
-  flex-direction: column;
+
   text-align: center;
   color: rgba(16, 16, 16, 1);
   font-size: 0.7rem;

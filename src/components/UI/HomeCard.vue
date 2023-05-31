@@ -42,23 +42,40 @@ export default defineComponent({
   flex-direction: row;
   height: 8rem;
   justify-content: space-between;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  margin-left: 2%;
+  margin-right: 2%;
   margin-top: 1.5rem;
   border-radius: 8px;
+
+  @media screen and (max-width: 760px) {
+    justify-content: space-evenly;
+  }
 }
+
 .card_container img {
   width: 5rem;
+
+  @media screen and (max-width: 760px) {
+    width: 3rem;
+    display: none;
+  }
 }
 .card_content {
   display: flex;
   padding-left: 1rem;
+  @media screen and (max-width: 760px) {
+    padding-left: 1.5rem;
+  }
 }
 h3 {
   font-size: 1.5rem;
   color: rgba(23, 23, 23, 1);
   transform: translateX(-5rem);
   padding-top: 1rem;
+  @media screen and (max-width: 760px) {
+    transform: translateX(-3rem);
+    padding-top: 2rem;
+  }
 }
 p {
   color: rgba(102, 102, 102, 1);

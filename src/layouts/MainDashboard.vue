@@ -84,6 +84,9 @@ export default defineComponent({
   font-size: 1rem;
   font-weight: 500;
   padding-top: 1.5rem;
+  @media screen and (max-width: 760px) {
+    padding-top: 2rem;
+  }
 }
 .input {
   margin-top: 1rem;
