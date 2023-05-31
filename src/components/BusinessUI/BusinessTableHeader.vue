@@ -1,11 +1,11 @@
 <template>
    <div class="wrapper">
     <p class="business-total">Businesses:86</p>
-    <q-input color="teal" filled v-model="text" label="Search using business name or business ID" class="input">
+    <q-input color="teal" filled v-model="this.text" @keyup="handleChange" label="Search using business name or business ID" class="input">
         <template v-slot:prepend>
           <q-icon name="search" />
         </template>
-      </q-input>
+      </q-input> 
     <!-- <q-icon class="fa-sharp fa-solid fa-arrow-up-right-from-square"/> -->
       <q-btn-dropdown class="filter" label="Filter by" flat>
         
@@ -34,9 +34,22 @@
   </template>
   
   <script>
+
   export default {
-   
-  };
+        data(){
+          return{
+            text:''
+          }
+        
+        },
+      methods:{
+        handleChange(){
+             this.$emit('customChange',this.text)
+          
+        }
+
+      }
+  }
   </script>
   
   <style scoped>
