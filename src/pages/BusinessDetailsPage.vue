@@ -1,24 +1,13 @@
 <template>
-  <div>
-    <div>
-        <p>Go Back</p>
-    </div>
-    <h1>Business details Page</h1>
+  <div class="container">
+    <DetailScreen />
   </div>
 </template>
 
 <script>
-import Button from "../components/UI/BaseButton.vue"
+import DetailScreen from "src/components/BusinessDetails/DetailScreen.vue";
+
 export default {
-  mounted() {
-    this.getid();
-  },
-  methods: {
-    getid() {
-      console.log(this.$route);
-    },
-  },
+  components: { DetailScreen },
 };
 </script>
-
-<style lang="scss" scoped></style>

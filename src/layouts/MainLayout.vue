@@ -52,12 +52,7 @@ const linksList = [
     icon: "work",
     link: "#/businesspage",
   },
-  {
-    title: "Business Detail",
-    // caption: "Business",
-    icon: "work",
-    link: "#/businessdetail",
-  },
+
   {
     title: "audit log",
     // caption: "chat.quasar.dev",
