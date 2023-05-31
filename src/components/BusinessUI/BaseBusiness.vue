@@ -19,6 +19,7 @@
       <q-tab name="Queried Approvals" label="Queried Approvals" class="tab" />
     </q-tabs>
     <q-separator inset />
+
     <BusinessTableHeader @customChange="handleCustomChange($event)" />
     <q-tab-panels v-model="this.tab" animated>
       <q-tab-panel name="All businesses">
@@ -83,5 +84,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 2rem;
+
 }
 </style>

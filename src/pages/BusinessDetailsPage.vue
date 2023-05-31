@@ -1,23 +1,13 @@
 <template>
-    <div>
-    <h1>Business details Page</h1>
-    </div>
+  <div class="container">
+    <DetailScreen />
+  </div>
 </template>
 
 <script>
+import DetailScreen from "src/components/BusinessDetails/DetailScreen.vue";
 
-export default({
-    mounted() {
-      this.getid()
-},
-     methods:{
-        getid(){
-        console.log(this.$route)
-        }
-     }
-})
+export default {
+  components: { DetailScreen },
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>
