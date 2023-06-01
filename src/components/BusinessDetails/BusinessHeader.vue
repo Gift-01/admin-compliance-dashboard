@@ -2,7 +2,7 @@
   <div class="Header-wrapper">
     <div class="icon-wrapper">
       <q-icon name="arrow_circle_left" class="Icon" />
-      <p>Go Back</p>
+      <i>Go Back</i>
     </div>
     <my-select
       :options="selectOptions"
@@ -42,6 +42,14 @@ export default {
 .Icon {
   padding: 3px;
   margin-right: 3px;
+}
+
+.Input {
+  width: 155px;
+  height: 34px !important;
+  gap: 10px;
+  border: 1px solid #c6c6c6;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
