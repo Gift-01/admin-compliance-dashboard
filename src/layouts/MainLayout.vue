@@ -17,7 +17,7 @@
           :options="selectOptions"
           class="input"
           label="Quick action"
-          border-radius="60px"
+          style="border-radius: 60px"
         />
         <div class="notification-wrapper">
           <div class="notification-dot"></div>
@@ -143,6 +143,7 @@ img {
   width: 10rem;
   @media screen and (max-width: 760px) {
     margin-right: 0.5rem;
+    width: 8rem;
   }
 }
 
