@@ -17,7 +17,7 @@
           :options="selectOptions"
           class="input"
           label="Quick action"
-          style="width: 10rem"
+          border-radius="60px"
         />
         <div class="notification-wrapper">
           <div class="notification-dot"></div>
@@ -140,12 +140,15 @@ img {
 }
 .input {
   margin-right: 4rem;
+  width: 10rem;
   @media screen and (max-width: 760px) {
     margin-right: 0.5rem;
   }
 }
+
 .notification-icon {
-  color: rgba(16, 16, 16, 1);
+  color: #ced0d0;
+  font-size: 1.5rem;
 }
 .notification-wrapper {
   position: relative;

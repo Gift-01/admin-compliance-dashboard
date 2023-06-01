@@ -11,6 +11,21 @@
     flat
     :style="{ overflowX: 'auto' }"
   >
+    <template v-slot:body-cell-VerificationStatus="props">
+      <q-td :props="props">
+        <div
+          :style="{
+            display: 'inline-block',
+            padding: '2px, 8px, 2px, 8px',
+            borderRadius: '16px',
+            color: getStatusTextColor(props.row.VerificationStatus),
+            backgroundColor: getStatusColor(props.row.VerificationStatus),
+          }"
+        >
+          {{ props.row.VerificationStatus }}
+        </div>
+      </q-td>
+    </template>
   </q-table>
 </template>
 
@@ -27,6 +42,31 @@ export default {
   },
 
   methods: {
+    getStatusColor(status) {
+      switch (status) {
+        case "Approved":
+          return "#ECFDF3";
+        case "Pending Approval":
+          return "#FFFAEB";
+        case "Quaried":
+          return "#FEF3F2";
+        default:
+          return "#bdbdbd";
+      }
+    },
+
+    getStatusTextColor(status) {
+      switch (status) {
+        case "Approved":
+          return "#027A48";
+        case "Pending Approval":
+          return "#B54708";
+        case "Quaried":
+          return "#B42318";
+        default:
+          return "#000000";
+      }
+    },
     handleRowClick(row) {
       this.$router.push({ path: `businesspage/${row.id}` });
     },
@@ -53,17 +93,5 @@ export default {
   color: rgba(16, 16, 16, 1);
   font-size: 0.7rem;
   font-weight: 400;
-}
-
-.status-approved {
-  color: green;
-}
-
-.status-pending {
-  color: orange;
-}
-
-.status-queried {
-  color: red;
 }
 </style>
