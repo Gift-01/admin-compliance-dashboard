@@ -46,6 +46,7 @@ export default defineComponent({
   margin-right: 2%;
   margin-top: 1.5rem;
   border-radius: 8px;
+  overflow: hidden;
 
   @media screen and (max-width: 760px) {
     justify-content: space-evenly;
