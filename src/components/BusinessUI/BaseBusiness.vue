@@ -59,6 +59,4 @@ export default {
 .container {
   padding: 2rem;
 }
-.tab {
-}
 </style>
