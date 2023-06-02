@@ -21,10 +21,8 @@
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
           <td class="text-right">view</td>
-          <td>
-            <a href="#" style="color: #dc3030; text-decoration: none"
-              >Query Document</a
-            >
+          <td style="color: #dc3030">
+            <BusinessPopUp />
           </td>
         </tr>
         <tr>
@@ -37,10 +35,8 @@
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
           <td class="text-right">view</td>
-          <td>
-            <a href="#" style="color: #dc3030; text-decoration: none"
-              >Query Document</a
-            >
+          <td style="color: #dc3030">
+            <BusinessPopUp />
           </td>
         </tr>
         <tr>
@@ -58,10 +54,8 @@
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
           <td class="text-right">view</td>
-          <td>
-            <a href="#" style="color: #dc3030; text-decoration: none"
-              >Query Document</a
-            >
+          <td style="color: #dc3030">
+            <BusinessPopUp />
           </td>
         </tr>
       </tbody>
@@ -70,7 +64,8 @@
 </template>
 
 <script>
-export default {};
+import BusinessPopUp from "./BusinessPopUp.vue";
+export default {
+  components: { BusinessPopUp },
+};
 </script>
-
-<style></style>

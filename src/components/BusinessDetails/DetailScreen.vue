@@ -2,7 +2,7 @@
   <div class="container">
     <BusinessHeader />
     <BusinessDescription />
-    <BusinessTabs/>
+    <BusinessTabs />
   </div>
 </template>
 
