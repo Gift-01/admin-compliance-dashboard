@@ -5,66 +5,36 @@
         <q-tabs
           v-model="tab"
           dense
-          class="text-grey"
-          active-color="primary"
-          indicator-color="primary"
+          :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'"
+          active-color="dark"
+          indicator-color="dark"
           align="justify"
           narrow-indicator
         >
           <q-tab name="business-details" label="Business Details" />
           <q-tab name="verification-documents" label="Verification Documents" />
         </q-tabs>
-
         <q-separator />
-
         <q-tab-panels v-model="tab" animated>
           <q-tab-panel name="business-details">
-            <div class="text-h6">Business Details</div>
-            <q-separator />
-            <div class="details">
-              <div>
-                <div>
-                  <i class="title"> Business Name</i>
-                  <p class="text">CraftElavate</p>
-                </div>
-                <div>
-                  <i class="title">Date created</i>
-                  <p class="text">Aug 12,2020 9:37am</p>
-                </div>
-                <div>
-                  <i class="title">Business Size</i>
-                  <p class="text">10-20 people</p>
-                </div>
-                <div>
-                  <i class="title">Business Category</i>
-                  <p class="text">Agricultural investment</p>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <i class="title">Business ID</i>
-                  <p class="text">#10004200211</p>
-                </div>
-                <div>
-                  <i class="title">Business Type</i>
-                  <p class="text">Individual Type</p>
-                </div>
-                <div>
-                  <i class="title">Industry Type</i>
-                  <p class="text">Agriculture</p>
-                </div>
-                <div>
-                  <i class="title">Business Address</i>
-                  <p class="text">12/15 Allen Avenue street Lekki,Lagos.</p>
-                </div>
-              </div>
+            <div
+              class="text-h6"
+              style="color: #171717; font-weight: 700; font-size: 20px"
+            >
+              Business Details
             </div>
             <q-separator />
+            <BusinessInfo />
+            <q-separator />
           </q-tab-panel>
-
           <q-tab-panel name="verification-documents">
             <div class="verification-documents">
-              <p class="text-h6">Application Documents</p>
+              <p
+                class="text-h6"
+                style="color: #171717; font-weight: 700; font-size: 20px"
+              >
+                Application Documents
+              </p>
               <q-btn label="Upload Document" class="Button" />
             </div>
             <BusinessTable />
@@ -77,40 +47,27 @@
 
 <script>
 import BusinessTable from "./BusinessTable.vue";
+import BusinessInfo from "./BusinessInfo.vue";
 
 export default {
-  components: { BusinessTable },
+  components: { BusinessTable, BusinessInfo },
   data() {
     return {
-      tab: "mails",
+      tab: "business-details",
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.details {
-  display: flex;
-  flex-direction: row;
-  padding: 16px 16px 24px;
-  gap: 100px;
-  background: #ffffff;
-  border-radius: 12px;
-}
-
-.text {
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 24px;
-}
-.title {
-  color: #666;
-}
 .Button {
   color: #344054;
   text-transform: capitalize;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
   min-width: 159px !important;
-  // background-color:;
+  height: 43px;
 }
 
 .verification-documents {
@@ -118,7 +75,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
+  padding: 16px 16px;
   gap: 24px;
 }
 </style>
