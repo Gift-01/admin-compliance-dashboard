@@ -4,7 +4,7 @@
     :rows="items"
     :columns="columns"
     row-key="id"
-    :rows-per-page-options="[5, 25, 50]"
+    :rows-per-page-options="perPageOptions"
     :pagination="{ enabled: true }"
     :filter="filter"
     @row-click="handleRowClick"
@@ -34,6 +34,13 @@
 import { items, columns } from "../../items";
 
 export default {
+  props: {
+    perPageOptions: {
+      type: Array,
+      default: () => [5, 25, 50],
+    },
+  },
+
   data() {
     return {
       items,
