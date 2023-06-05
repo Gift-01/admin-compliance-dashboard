@@ -9,10 +9,19 @@
           active-color="dark"
           indicator-color="dark"
           align="justify"
-          narrow-indicator
         >
-          <q-tab name="business-details" label="Business Details" />
-          <q-tab name="verification-documents" label="Verification Documents" />
+          <q-tab
+            name="business-details"
+            label="Business Details"
+            class="text-capitalize"
+            style="flex: none"
+          />
+          <q-tab
+            name="verification-documents"
+            label="Verification Documents"
+            class="text-capitalize"
+            style="flex: none"
+          />
         </q-tabs>
         <q-separator />
         <q-tab-panels v-model="tab" animated>

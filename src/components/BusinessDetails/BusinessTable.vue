@@ -53,7 +53,7 @@
             Akinem Ventures.pdf
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right">view</td>
+          <td class="text-right">view </td>
           <td style="color: #dc3030">
             <BusinessPopUp />
           </td>

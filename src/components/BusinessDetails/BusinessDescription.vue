@@ -4,10 +4,10 @@
       <div class="mini-wrapper">
         <p class="Text">Craft Elevate</p>
         <p>Ourpass/SDFGHK./HJKO765432456</p>
-        <q-btn label="Queried" class="Button" />
+        <q-badge label="Queried" class="Button" />
       </div>
       <div class="sub-wrapper">
-        <p>Approval Status</p>
+        <p class="text-wrapper">Approval Status</p>
         <my-select :options="selectOptions" class="Input" label="Rejected" />
       </div>
     </div>
@@ -65,6 +65,9 @@ export default {
   align-items: center;
   gap: 12px;
   height: 45px;
+}
+.text-wrapper {
+  margin: 0 10px;
 }
 
 .Button {
