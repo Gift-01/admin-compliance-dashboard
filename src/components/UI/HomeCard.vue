@@ -46,6 +46,7 @@ export default defineComponent({
   margin-right: 2%;
   margin-top: 1.5rem;
   border-radius: 8px;
+  overflow: hidden;
 
   @media screen and (max-width: 760px) {
     justify-content: space-evenly;
@@ -56,7 +57,6 @@ export default defineComponent({
   width: 5rem;
 
   @media screen and (max-width: 760px) {
-    width: 3rem;
     display: none;
   }
 }
@@ -73,8 +73,8 @@ h3 {
   transform: translateX(-5rem);
   padding-top: 1rem;
   @media screen and (max-width: 760px) {
-    transform: translateX(-3rem);
-    padding-top: 2rem;
+    transform: translateX(-2rem);
+    padding-top: 2.5rem;
   }
 }
 p {

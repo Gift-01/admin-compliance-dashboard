@@ -83,7 +83,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 1rem;
- background-color: #fff;
+  padding: 2rem;
 }
 </style>
