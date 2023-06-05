@@ -16,7 +16,7 @@
         <div
           :style="{
             display: 'inline-block',
-            padding: '5px',
+            padding: '10px',
             borderRadius: '16px',
             textAlign: 'center',
             color: getStatusTextColor(props.row.VerificationStatus),
@@ -37,7 +37,7 @@ export default {
   props: {
     perPageOptions: {
       type: Array,
-      default: () => [5, 25, 50],
+      default: () => [7, 14, 20],
     },
   },
 
@@ -56,7 +56,7 @@ export default {
           return "#ECFDF3";
         case "Pending Approval":
           return "#FFFAEB";
-        case "Quaried":
+        case "Queried":
           return "#FEF3F2";
         default:
           return "#bdbdbd";
@@ -69,7 +69,7 @@ export default {
           return "#027A48";
         case "Pending Approval":
           return "#B54708";
-        case "Quaried":
+        case "Queried":
           return "#B42318";
         default:
           return "#000000";
