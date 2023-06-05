@@ -58,16 +58,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .wrapper {
   padding-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-left: 1rem;
+  @media (max-width:572px) {
+     display: grid;
+     grid-template-columns: repeat(2,1fr);
+
+     gap: 1rem;
+  }
 }
 .input {
   width: 50%;
+  @media (max-width:806px) {
+    width: 30%;
+  }
+    @media (max-width:572px){
+      width: 100%;
+    }
+ 
 }
 .export-btn {
   background-color: #31a3a0;

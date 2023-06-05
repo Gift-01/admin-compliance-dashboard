@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md">
+  <div class="">
     <q-table flat :rows="rows" :columns="columns" row-key="name">
       <template v-slot:body="props">
         <q-tr :props="props" @click="onRowClick(props.row)">
