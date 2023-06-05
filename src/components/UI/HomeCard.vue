@@ -73,8 +73,8 @@ h3 {
   transform: translateX(-5rem);
   padding-top: 1rem;
   @media screen and (max-width: 760px) {
-    transform: translateX(-2rem);
-    padding-top: 2.5rem;
+    transform: translateX(-2.5rem);
+    padding-top: 2rem;
   }
 }
 p {

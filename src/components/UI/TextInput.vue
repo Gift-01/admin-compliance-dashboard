@@ -1,11 +1,7 @@
 <template>
-  <q-select
-    outlined
-    v-model="model"
-    :options="options"
-    :label="label"
-    class="input"
-  />
+  <div class="input">
+    <q-select outlined v-model="model" :options="options" :label="label" />
+  </div>
 </template>
 
 <script>
@@ -34,8 +30,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.input {
-  border-radius: 5px;
-}
-</style>
+<style scoped></style>

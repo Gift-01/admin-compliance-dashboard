@@ -16,8 +16,9 @@
         <div
           :style="{
             display: 'inline-block',
-            padding: '2px, 8px, 2px, 8px',
+            padding: '5px',
             borderRadius: '16px',
+            textAlign: 'center',
             color: getStatusTextColor(props.row.VerificationStatus),
             backgroundColor: getStatusColor(props.row.VerificationStatus),
           }"

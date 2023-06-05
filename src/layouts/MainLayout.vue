@@ -74,7 +74,7 @@ const linksList = [
     title: "audit log",
     // caption: "chat.quasar.dev",
     icon: "tv",
-    link: "https://chat.quasar.dev",
+    link: "/",
   },
 ];
 
