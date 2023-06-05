@@ -126,7 +126,7 @@ export const items = [
     businessName: "InspiredRevolution",
     businessId: "#10004200211",
     businessType: "Registered Company",
-    VerificationStatus: "Quaried",
+    VerificationStatus: "Queried",
     DateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-quaried",
   },

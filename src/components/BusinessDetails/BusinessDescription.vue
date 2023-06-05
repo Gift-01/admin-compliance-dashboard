@@ -2,13 +2,13 @@
   <div class="Description-container">
     <div class="wrapper">
       <div class="mini-wrapper">
-        <p>Craft Elevate</p>
+        <p class="Text">Craft Elevate</p>
         <p>Ourpass/SDFGHK./HJKO765432456</p>
         <q-btn label="Queried" class="Button" />
       </div>
       <div class="sub-wrapper">
         <p>Approval Status</p>
-        <my-select :options="selectOptions" class="input" label="Rejected" />
+        <my-select :options="selectOptions" class="Input" label="Rejected" />
       </div>
     </div>
     <div class="description">
@@ -85,6 +85,11 @@ export default {
   font-size: 18px;
   line-height: 21.6px;
   font-weight: 500;
+}
+.Input {
+  width: 136px;
+  border: 1px solid #ced0d0;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {

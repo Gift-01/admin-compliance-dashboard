@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="q-list">
-    <q-header elevated class="header">
+  <q-layout view="lHh Lpr lFf" class="q-list" >
+    <q-header  class="header">
       <q-toolbar>
         <q-btn
           flat
@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title class="name_title"> Welcome Sameze</q-toolbar-title>
+        <q-toolbar-title class="name_title"> Welcome, Sameze</q-toolbar-title>
 
         <my-select
           :options="selectOptions"
@@ -26,20 +26,21 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered >
       <q-list>
         <q-item-label header>
           <div class="img">
             <img :src="Logo" alt="logo" />
           </div>
         </q-item-label>
-
+        
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
           class="links"
         />
+       
       </q-list>
     </q-drawer>
 
@@ -164,5 +165,8 @@ img {
   height: 10px;
   background-color: red;
   border-radius: 50%;
+}
+.bb{
+  border-bottom: 1px solid red;
 }
 </style>

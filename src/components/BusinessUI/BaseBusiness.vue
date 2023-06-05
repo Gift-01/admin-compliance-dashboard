@@ -23,27 +23,27 @@
     <BusinessTableHeader @customChange="handleCustomChange($event)" />
     <q-tab-panels v-model="this.tab" animated>
       <q-tab-panel name="All businesses">
-        <BaseTable :rows="this.row" />
+        <TableContent :rows="this.row" />
       </q-tab-panel>
 
       <q-tab-panel name="Approved businesses">
-        <BaseTable :rows="this.approved" />
+        <TableContent :rows="this.approved" />
       </q-tab-panel>
 
       <q-tab-panel name="Pending Approval">
-        <BaseTable :rows="this.pending" />
+        <TableContent :rows="this.pending" />
       </q-tab-panel>
       <q-tab-panel name="Queried Approvals">
-        <BaseTable :rows="this.queried" />
+        <TableContent :rows="this.queried" />
       </q-tab-panel>
     </q-tab-panels>
   </div>
 </template>
 
 <script>
-import BaseTable from "src/components/UI/BaseTable.vue";
+import TableContent from "../UI/TableContent.vue";
 import BusinessTableHeader from "src/components/BusinessUI/BusinessTableHeader.vue";
-import { rows } from "../../baseRow.js";
+import { items as rows } from "../../items";
 
 export default {
   beforeMount() {
@@ -51,7 +51,7 @@ export default {
     this.pending = this.getPending();
     this.queried = this.getQueried();
   },
-  components: { BaseTable, BusinessTableHeader },
+  components: { TableContent, BusinessTableHeader },
   data() {
     return {
       tab: "All businesses",
@@ -59,24 +59,33 @@ export default {
       pending: "",
       queried: "",
       inputValue: "",
-      row: rows,
+      row: this.handleSearch(rows),
     };
   },
   methods: {
     getApproved() {
-      return rows.filter((item) => item.verificationStatus == "Approved");
+      return rows.filter((item) => item.VerificationStatus == "Approved");
     },
     getPending() {
       return rows.filter(
-        (item) => item.verificationStatus == "Pending Approval"
+        (item) => item.VerificationStatus == "Pending Approval"
       );
     },
     getQueried() {
-      return rows.filter((item) => item.verificationStatus == "Queried");
+      return rows.filter((item) => item.VerificationStatus == "Queried");
     },
     handleCustomChange(text) {
       this.inputValue = text;
+      console.log(this.handleSearch())
     },
+    handleSearch(rows,inputValue){
+      // if(inputValue){
+      //  return rows.filter((item)=>item.businessName==inputValue)
+      // }else{
+      //   return rows
+      // }
+      return rows
+    }
   },
 };
 </script>
@@ -84,6 +93,5 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 2rem;
-
 }
 </style>
