@@ -1,8 +1,7 @@
 <template>
   <div class="Header-wrapper">
-    <div class="icon-wrapper">
-      <!-- <q-btn icon="arrow_circle_left" /> -->
-      <q-icon name="arrow_circle_left" class="Icon" @click="goBack" />
+    <div class="icon-wrapper" @click="goBack">
+      <q-icon name="arrow_circle_left" class="Icon" />
       <i>Go Back</i>
     </div>
     <my-select
@@ -42,6 +41,7 @@ export default {
   justify-content: space-between;
   height: 34px;
   margin: 36px 24px;
+  cursor: pointer;
 }
 .icon-wrapper {
   display: flex;
