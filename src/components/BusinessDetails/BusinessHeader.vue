@@ -4,10 +4,12 @@
       <q-icon name="arrow_circle_left" class="Icon" />
       <i>Go Back</i>
     </div>
-    <my-select
-      :options="selectOptions"
+    <q-select
+      standout="black text-white"
+      v-model="model"
+      :options="options"
+      label="Quick action"
       class="input"
-      label="Quick Action"
       bg-color="black"
       label-color="grey-3"
     />
@@ -15,15 +17,13 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import MySelect from "src/components/UI/TextInput";
-
 export default {
-  components: { MySelect },
+  components: {},
 
   data() {
     return {
-      selectOptions: ["Upload Document", "Query Document"],
+      model: null,
+      options: ["Upload Document", " Query Document"],
     };
   },
 
