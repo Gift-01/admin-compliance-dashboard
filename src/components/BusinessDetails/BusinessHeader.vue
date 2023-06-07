@@ -6,7 +6,7 @@
     </div>
     <my-select
       :options="selectOptions"
-      class="Input"
+      class="input"
       label="Quick Action"
       bg-color="black"
       label-color="grey-3"
@@ -53,12 +53,10 @@ export default {
   background-color: white;
 }
 
-.Input {
-  width: 155px;
-  height: 34px !important;
-  gap: 10px;
+.input {
+  width: 160px;
   border: 1px solid #c6c6c6;
-  border-radius: 8px;
+  border-radius: 8px !important;
 }
 
 @media (max-width: 768px) {
