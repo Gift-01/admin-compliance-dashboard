@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="q-list" >
-    <q-header  class="header">
+  <q-layout view="lHh Lpr lFf" class="q-list">
+    <q-header class="header">
       <q-toolbar>
         <q-btn
           flat
@@ -17,7 +17,7 @@
           :options="selectOptions"
           class="input"
           label="Quick action"
-          style="border-radius: 60px"
+          rounded="rounded"
         />
         <div class="notification-wrapper">
           <div class="notification-dot"></div>
@@ -26,21 +26,20 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered >
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-list>
         <q-item-label header>
           <div class="img">
             <img :src="Logo" alt="logo" />
           </div>
         </q-item-label>
-        
+
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
           class="links"
         />
-       
       </q-list>
     </q-drawer>
 
@@ -134,14 +133,17 @@ export default defineComponent({
   color: rgba(16, 16, 16, 1);
   @media screen and (max-width: 400px) {
     font-size: 0.7rem;
+    color: red;
+    width: 1000px;
   }
 }
 img {
   margin-top: 3rem;
 }
 .input {
-  margin-right: 4rem;
+  margin-right: 1rem;
   width: 10rem;
+  font-size: 0.2rem;
   @media screen and (max-width: 760px) {
     margin-right: 0.5rem;
     width: 8rem;
@@ -155,6 +157,7 @@ img {
 .notification-wrapper {
   position: relative;
   display: inline-block;
+  margin-right: 1rem;
 }
 
 .notification-dot {
@@ -166,7 +169,7 @@ img {
   background-color: red;
   border-radius: 50%;
 }
-.bb{
+.bb {
   border-bottom: 1px solid red;
 }
 </style>

@@ -2,12 +2,7 @@
   <div class="dashboard">
     <div class="hero_heading">
       <p>Business Overview</p>
-      <my-select
-        :options="selectOptions"
-        class="input"
-        label="All time"
-        style="width: 10rem"
-      />
+      <my-select :options="selectOptions" class="input" label="All time" />
     </div>
     <div class="hero_content">
       <HomeCard
@@ -94,6 +89,10 @@ export default defineComponent({
   background: linear-gradient(0deg, #ffffff, #ffffff),
     linear-gradient(0deg, #ced0d0, #ced0d0);
   margin-bottom: 0.5rem;
+  width: 10rem;
+  @media screen and (max-width: 760px) {
+    width: 8rem;
+  }
 }
 
 .dashboard {

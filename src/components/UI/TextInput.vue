@@ -1,6 +1,14 @@
 <template>
   <div class="input">
-    <q-select outlined v-model="model" :options="options" :label="label" />
+    <div class="q-gutter-md">
+      <q-select
+        :rounded="rounded"
+        outlined
+        v-model="model"
+        :options="options"
+        :label="label"
+      />
+    </div>
   </div>
 </template>
 
@@ -16,6 +24,9 @@ export default {
     label: {
       type: String,
       default: "All time",
+    },
+    rounded: {
+      type: String,
     },
   },
   setup() {
