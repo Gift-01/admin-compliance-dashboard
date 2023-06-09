@@ -76,7 +76,9 @@ export default {
       }
     },
     handleRowClick(row) {
-      this.$router.push({ path: `businesspage/${row.id}` });
+      this.$router.push({ path: `businesspage/businessdetailspage` });
+      // this.$router.push({ path: `businesspage/${row.id}` });
+      // console.log(row);
     },
   },
 

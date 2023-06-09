@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     getid() {
-      console.log(this.$route);
+      console.log(this.$route.params.id);
     },
   },
 };
