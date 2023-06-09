@@ -74,7 +74,6 @@ const linksList = [
     title: "audit log",
     // caption: "chat.quasar.dev",
     icon: "tv",
-    link: "/",
   },
 ];
 
@@ -133,7 +132,6 @@ export default defineComponent({
   color: rgba(16, 16, 16, 1);
   @media screen and (max-width: 400px) {
     font-size: 0.7rem;
-    color: red;
     width: 1000px;
   }
 }
