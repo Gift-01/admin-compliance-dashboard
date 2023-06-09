@@ -156,6 +156,7 @@ img {
   position: relative;
   display: inline-block;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .notification-dot {
