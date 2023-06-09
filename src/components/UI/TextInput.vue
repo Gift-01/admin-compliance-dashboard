@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 
 export default {
   props: {
@@ -30,12 +30,10 @@ export default {
     },
   },
   setup() {
-    const props = defineProps(["options"]);
     const model = ref(null);
 
     return {
       model,
-      ...props,
     };
   },
 };
