@@ -12,6 +12,7 @@
       class="input"
       bg-color="black"
       label-color="grey-3"
+      style="min-height: 12px"
     />
   </div>
 </template>
@@ -40,7 +41,7 @@ export default {
   display: flex;
   justify-content: space-between;
   height: 34px;
-  margin: 36px 24px;
+  margin: 36px 30px;
   cursor: pointer;
 }
 .icon-wrapper {
@@ -54,9 +55,15 @@ export default {
 }
 
 .input {
-  width: 160px;
+  width: 136px;
+  // min-height: 12px;
   border: 1px solid #c6c6c6;
   border-radius: 8px !important;
+  margin: 0 10px;
+}
+
+.input .q-field__control {
+  height: 12px;
 }
 
 @media (max-width: 768px) {
