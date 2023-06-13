@@ -14,7 +14,7 @@
       </template>
     </q-input>
     <!-- <q-icon class="fa-sharp fa-solid fa-arrow-up-right-from-square"/> -->
-    <q-btn-dropdown class="filter" label="Filter by" flat>
+    <q-btn-dropdown icon="sort" class="filter" label="Filter by" flat>
       <q-list>
         <q-item clickable v-close-popup @click="onItemClick">
           <q-item-section>
@@ -36,7 +36,7 @@
       </q-list>
     </q-btn-dropdown>
     <q-btn
-      icon="fa-sharp fa-solid fa-arrow-up-right-from-square"
+       icon="fas fa-arrow-up-right-from-square"
       label="export"
       class="export-btn"
     />
@@ -79,16 +79,26 @@ export default {
     @media (max-width:572px){
       width: 100%;
     }
+    
  
 }
 .export-btn {
   background-color: #31a3a0;
   color: white;
-  padding-block: 0.5rem;
+  /* padding-block: 0.5rem; */
+  border-radius: 8px;
+  @media (max-width:383px){
+      font-size: 10px;
+    }
 }
+
 .filter {
   background-color: #f2f2f2;
   color: #101010;
+  border-radius: 5px;
+  @media (max-width:383px){
+      font-size: 10px;
+    }
 }
 .business-total {
   margin-top: 1rem;

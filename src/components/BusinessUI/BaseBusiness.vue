@@ -50,6 +50,7 @@ export default {
     this.approved = this.getApproved();
     this.pending = this.getPending();
     this.queried = this.getQueried();
+ 
   },
   components: { TableContent, BusinessTableHeader },
   data() {
@@ -85,13 +86,14 @@ export default {
       //   return rows
       // }
       return rows
-    }
+    },
+ 
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 </style>

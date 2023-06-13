@@ -5,6 +5,7 @@
     :options="options"
     :label="label"
     class="input"
+
   />
 </template>
 

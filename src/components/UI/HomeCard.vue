@@ -35,7 +35,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card_container {
   width: 30%;
   display: flex;
@@ -65,8 +65,12 @@ export default defineComponent({
   padding-left: 1rem;
   @media screen and (max-width: 760px) {
     padding-left: 1.5rem;
+
   }
-}
+ 
+  }
+ 
+
 h3 {
   font-size: 1.5rem;
   color: rgba(23, 23, 23, 1);

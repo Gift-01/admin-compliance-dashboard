@@ -1,8 +1,8 @@
 <template>
   <div class="Header-wrapper">
-    <div class="icon-wrapper">
+    <div class="icon-wrapper"  @click="goBack">
       <!-- <q-btn icon="arrow_circle_left" /> -->
-      <q-icon name="arrow_circle_left" class="Icon" @click="goBack" />
+      <q-icon name="arrow_circle_left" class="Icon" />
       <i>Go Back</i>
     </div>
     <my-select
@@ -45,6 +45,7 @@ export default {
 }
 .icon-wrapper {
   display: flex;
+  cursor: pointer;
 }
 .Icon {
   padding: 3px;

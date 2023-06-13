@@ -7,7 +7,7 @@ const routes = [
   },
 
   {
-    path: "/businesspage",
+    path: "/businesses",
 
     component: () => import("layouts/MainLayout.vue"),
     children: [
