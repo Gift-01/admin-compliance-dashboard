@@ -4,7 +4,7 @@
     :rows="items"
     :columns="columns"
     row-key="id"
-    :rows-per-page-options="[5, 25, 50]"
+    :rows-per-page-options="perPageOptions"
     :pagination="{ enabled: true }"
     :filter="filter"
     @row-click="handleRowClick"
@@ -16,8 +16,9 @@
         <div
           :style="{
             display: 'inline-block',
-            padding: '2px, 8px, 2px, 8px',
+            padding: '10px',
             borderRadius: '16px',
+            textAlign: 'center',
             color: getStatusTextColor(props.row.VerificationStatus),
             backgroundColor: getStatusColor(props.row.VerificationStatus),
           }"
@@ -33,6 +34,13 @@
 import { items, columns } from "../../items";
 
 export default {
+  props: {
+    perPageOptions: {
+      type: Array,
+      default: () => [7, 14, 20],
+    },
+  },
+
   data() {
     return {
       items,
@@ -48,7 +56,7 @@ export default {
           return "#ECFDF3";
         case "Pending Approval":
           return "#FFFAEB";
-        case "Quaried":
+        case "Queried":
           return "#FEF3F2";
         default:
           return "#bdbdbd";
@@ -61,7 +69,7 @@ export default {
           return "#027A48";
         case "Pending Approval":
           return "#B54708";
-        case "Quaried":
+        case "Queried":
           return "#B42318";
         default:
           return "#000000";

@@ -23,7 +23,7 @@
     <BusinessTableHeader @customChange="handleCustomChange($event)" />
     <q-tab-panels v-model="this.tab" animated>
       <q-tab-panel name="All businesses">
-        <TableContent :rows="this.row" />
+        <TableContent :rows="this.row" :per-page-options="[10, 20, 30]" />
       </q-tab-panel>
 
       <q-tab-panel name="Approved businesses">
@@ -77,9 +77,9 @@ export default {
     },
     handleCustomChange(text) {
       this.inputValue = text;
-      console.log(this.handleSearch())
+      console.log(this.handleSearch());
     },
-    handleSearch(rows,inputValue){
+    handleSearch(rows, inputValue) {
       // if(inputValue){
       //  return rows.filter((item)=>item.businessName==inputValue)
       // }else{

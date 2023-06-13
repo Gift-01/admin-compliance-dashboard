@@ -23,38 +23,6 @@ export const columns = [
     align: "left",
     field: "VerificationStatus",
     sortable: true,
-    // scopedSlots: {
-    //   custom: (props) => {
-    //     // Apply custom styling based on the VerificationStatus value
-    //     const itemStyle = {
-    //       display: "inline-block",
-    //       padding: "4px 8px",
-    //       borderRadius: "4px",
-    //       color: "#ffffff", // Text color for all statuses
-    //       backgroundColor: "", // Background color based on the status
-    //     };
-
-    //     switch (props.row.VerificationStatus) {
-    //       case "Approved":
-    //         itemStyle.backgroundColor = "#4caf50"; // Green color for Approved status
-    //         break;
-    //       case "Pending Approval":
-    //         itemStyle.backgroundColor = "#ff9800"; // Orange color for Pending Approval status
-    //         break;
-    //       case "Quaried":
-    //         itemStyle.backgroundColor = "#f44336"; // Red color for Quaried status
-    //         break;
-    //       // Add more cases for other statuses as needed
-    //       default:
-    //         itemStyle.backgroundColor = "#bdbdbd"; // Default background color
-    //     }
-
-    //     // Return the styled content
-    //     return `<div style="${Object.entries(itemStyle)
-    //       .map(([key, value]) => `${key}:${value}`)
-    //       .join(";")}">${props.row.VerificationStatus}</div>`;
-    //   },
-    // },
   },
   {
     name: "businessType",

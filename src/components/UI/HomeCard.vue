@@ -50,6 +50,8 @@ export default defineComponent({
 
   @media screen and (max-width: 760px) {
     justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
   }
 }
 
@@ -62,23 +64,16 @@ export default defineComponent({
 }
 .card_content {
   display: flex;
-  padding-left: 1rem;
-  @media screen and (max-width: 760px) {
-    padding-left: 1.5rem;
-
-  }
- 
-  }
- 
-
+  padding-left: 0.5rem;
+}
 h3 {
   font-size: 1.5rem;
   color: rgba(23, 23, 23, 1);
   transform: translateX(-5rem);
   padding-top: 1rem;
   @media screen and (max-width: 760px) {
-    transform: translateX(-2rem);
-    padding-top: 2.5rem;
+    transform: translateX(-2.5rem);
+    padding-top: 2rem;
   }
 }
 p {

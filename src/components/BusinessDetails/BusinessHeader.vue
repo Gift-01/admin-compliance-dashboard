@@ -1,30 +1,30 @@
 <template>
   <div class="Header-wrapper">
-    <div class="icon-wrapper"  @click="goBack">
-      <!-- <q-btn icon="arrow_circle_left" /> -->
+    <div class="icon-wrapper" @click="goBack">
       <q-icon name="arrow_circle_left" class="Icon" />
       <i>Go Back</i>
     </div>
-    <my-select
-      :options="selectOptions"
-      class="Input"
-      label="Quick Action"
+    <q-select
+      standout="black text-white"
+      v-model="model"
+      :options="options"
+      label="Quick action"
+      class="input"
       bg-color="black"
       label-color="grey-3"
+      style="min-height: 12px"
     />
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-import MySelect from "src/components/UI/TextInput";
-
 export default {
-  components: { MySelect },
+  components: {},
 
   data() {
     return {
-      selectOptions: ["Upload Document", "Query Document"],
+      model: null,
+      options: ["Upload Document", " Query Document"],
     };
   },
 
@@ -41,7 +41,8 @@ export default {
   display: flex;
   justify-content: space-between;
   height: 34px;
-  margin: 36px 24px;
+  margin: 36px 30px;
+  cursor: pointer;
 }
 .icon-wrapper {
   display: flex;
@@ -54,12 +55,16 @@ export default {
   background-color: white;
 }
 
-.Input {
-  width: 155px;
-  height: 34px !important;
-  gap: 10px;
+.input {
+  width: 136px;
+  // min-height: 12px;
   border: 1px solid #c6c6c6;
-  border-radius: 8px;
+  border-radius: 8px !important;
+  margin: 0 10px;
+}
+
+.input .q-field__control {
+  height: 12px;
 }
 
 @media (max-width: 768px) {

@@ -1,16 +1,19 @@
 <template>
-  <q-select
-    outlined
-    v-model="model"
-    :options="options"
-    :label="label"
-    class="input"
-
-  />
+  <div class="input">
+    <div class="q-gutter-md">
+      <q-select
+        :rounded="rounded"
+        outlined
+        v-model="model"
+        :options="options"
+        :label="label"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 
 export default {
   props: {
@@ -22,21 +25,18 @@ export default {
       type: String,
       default: "All time",
     },
+    rounded: {
+      type: String,
+    },
   },
   setup() {
-    const props = defineProps(["options"]);
     const model = ref(null);
 
     return {
       model,
-      ...props,
     };
   },
 };
 </script>
 
-<style scoped>
-.input {
-  border-radius: 5px;
-}
-</style>
+<style scoped></style>
