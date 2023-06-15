@@ -44,7 +44,11 @@
               >
                 Application Documents
               </p>
-              <q-btn label="Upload Document" class="Button" />
+              <q-uploader
+                url="http://localhost:4444/upload"
+                label="Upload Documents"
+                class="Button"
+              />
             </div>
             <BusinessTable />
           </q-tab-panel>
@@ -76,7 +80,12 @@ export default {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   border-radius: 8px;
   min-width: 159px !important;
-  height: 43px;
+  // height: 43px;
+}
+
+.q-uploader__list scroll {
+  padding: 1px !important;
+  min-height: 1px !important;
 }
 
 .verification-documents {

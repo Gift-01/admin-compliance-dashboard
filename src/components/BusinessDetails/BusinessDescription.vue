@@ -2,8 +2,13 @@
   <div class="Description-container">
     <div class="wrapper">
       <div class="mini-wrapper">
-        <p class="Text">Craft Elevate</p>
-        <p>Ourpass/SDFGHK./HJKO765432456</p>
+        <div v-if="active">
+          <p class="Text">Craft Elevate</p>
+        </div>
+        <div @mouseover="showText = true" @mouseleave="showText = false">
+          <p>Ourpass/SDFGHK./HJKO765432456</p>
+        </div>
+        <p v-if="showText">Copy</p>
         <q-badge label="Queried" class="Button" />
       </div>
       <div class="sub-wrapper">
@@ -29,6 +34,7 @@ export default {
 
   data() {
     return {
+      showText: false,
       selectOptions: [
         "In Review",
         "Rejected",
