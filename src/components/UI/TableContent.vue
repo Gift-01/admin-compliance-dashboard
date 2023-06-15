@@ -11,7 +11,7 @@
     flat
     :style="{ overflowX: 'auto' }"
   >
-    <template v-slot:body-cell-VerificationStatus="props">
+    <template v-slot:body-cell-verificationStatus="props">
       <q-td :props="props">
         <div
           :style="{
@@ -19,11 +19,11 @@
             padding: '10px',
             borderRadius: '16px',
             textAlign: 'center',
-            color: getStatusTextColor(props.row.VerificationStatus),
-            backgroundColor: getStatusColor(props.row.VerificationStatus),
+            color: getStatusTextColor(props.row.verificationStatus),
+            backgroundColor: getStatusColor(props.row.verificationStatus),
           }"
         >
-          {{ props.row.VerificationStatus }}
+          {{ props.row.verificationStatus }}
         </div>
       </q-td>
     </template>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { items, columns } from "../../items";
+import { columns } from "../../items";
 
 export default {
   props: {
@@ -40,10 +40,12 @@ export default {
       default: () => [7, 14, 20],
     },
   },
-
+  created(){
+    this.getData()
+  },
   data() {
     return {
-      items,
+      items:[],
       columns,
       filter: "",
     };
@@ -52,7 +54,7 @@ export default {
   methods: {
     getStatusColor(status) {
       switch (status) {
-        case "Approved":
+        case "approved":
           return "#ECFDF3";
         case "Pending Approval":
           return "#FFFAEB";
@@ -65,7 +67,7 @@ export default {
 
     getStatusTextColor(status) {
       switch (status) {
-        case "Approved":
+        case "approved":
           return "#027A48";
         case "Pending Approval":
           return "#B54708";
@@ -75,9 +77,20 @@ export default {
           return "#000000";
       }
     },
-    handleRowClick(row) {
-      this.$router.push({ path: `businesses/${row.id}` });
+    handleRowClick() {
+       
+      this.$router.push({ path: `businesses/${row.businessName}` });
     },
+    async getData(){
+      try{
+       const response= await this.$api.get('api/business/overview')
+       const data=await response.data.data
+       this.items=data
+       console.log(data)
+      }catch(error){
+        console.log(error)
+      }
+    }
   },
 
   // computed: {

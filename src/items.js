@@ -17,11 +17,11 @@ export const columns = [
   },
 
   {
-    name: "VerificationStatus",
+    name: "verificationStatus",
     required: true,
     label: "Verification Status",
     align: "left",
-    field: "VerificationStatus",
+    field: "verificationStatus",
     sortable: true,
   },
   {
@@ -37,7 +37,7 @@ export const columns = [
     required: true,
     label: "Date Created",
     align: "left",
-    field: "DateCreated",
+    field: "dateCreated",
     sortable: true,
   },
   // Add more columns as needed
@@ -49,17 +49,17 @@ export const items = [
     businessName: "CraftElevate",
     businessId: "#10004200211",
     businessType: "Individual Business",
-    VerificationStatus: "Approved",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    verificationStatus: "approved",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-approved",
   },
   {
     id: 2,
     businessName: "InnovateEmpower",
     businessId: "#10004200211",
-    VerificationStatus: "Approved",
+    verificationStatus: "approved",
     businessType: "Individual Business",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-approved",
   },
   {

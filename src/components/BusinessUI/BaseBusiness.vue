@@ -50,7 +50,7 @@ export default {
     this.approved = this.getApproved();
     this.pending = this.getPending();
     this.queried = this.getQueried();
- 
+    
   },
   components: { TableContent, BusinessTableHeader },
   data() {
@@ -61,6 +61,7 @@ export default {
       queried: "",
       inputValue: "",
       row: this.handleSearch(rows),
+      
     };
   },
   methods: {
@@ -87,7 +88,6 @@ export default {
       // }
       return rows
     },
- 
   },
 };
 </script>
