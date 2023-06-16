@@ -25,12 +25,14 @@
       />
     </div>
     <SearchBar />
-    <TableContent />
+    <BaseTable/>
+    <!-- <TableContent /> -->
   </div>
 </template>
 
 <script>
-import TableContent from "../components/UI/TableContent.vue";
+// import TableContent from "../components/UI/TableContent.vue";
+import BaseTable from '../components/UI/BaseTable.vue' 
 import SearchBar from "../components/UI/SearchBar.vue";
 import { defineComponent } from "vue";
 import HomeCard from "../components/UI/HomeCard.vue";
@@ -42,7 +44,8 @@ import MySelect from "../components/UI/TextInput.vue";
 export default defineComponent({
   name: "MainDashboard",
   components: {
-    TableContent,
+    // TableContent,
+    BaseTable,
     SearchBar,
     HomeCard,
     MySelect,

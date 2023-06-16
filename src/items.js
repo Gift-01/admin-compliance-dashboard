@@ -1,47 +1,47 @@
-export const columns = [
-  {
-    name: "businessName",
-    required: true,
-    label: "Business Name",
-    align: "left",
-    field: "businessName",
-    sortable: true,
-  },
-  {
-    name: "businessId",
-    required: true,
-    label: "Business ID",
-    align: "left",
-    field: "businessId",
-    sortable: true,
-  },
+// export const columns = [
+//   {
+//     name: "businessName",
+//     required: true,
+//     label: "Business Name",
+//     align: "left",
+//     field: "businessName",
+//     sortable: true,
+//   },
+//   {
+//     name: "businessId",
+//     required: true,
+//     label: "Business ID",
+//     align: "left",
+//     field: "businessId",
+//     sortable: true,
+//   },
 
-  {
-    name: "VerificationStatus",
-    required: true,
-    label: "Verification Status",
-    align: "left",
-    field: "VerificationStatus",
-    sortable: true,
-  },
-  {
-    name: "businessType",
-    required: true,
-    label: "Business Type",
-    align: "left",
-    field: "businessType",
-    sortable: true,
-  },
-  {
-    name: "Datecreated",
-    required: true,
-    label: "Date Created",
-    align: "left",
-    field: "DateCreated",
-    sortable: true,
-  },
-  // Add more columns as needed
-];
+//   {
+//     name: "VerificationStatus",
+//     required: true,
+//     label: "Verification Status",
+//     align: "left",
+//     field: "VerificationStatus",
+//     sortable: true,
+//   },
+//   {
+//     name: "businessType",
+//     required: true,
+//     label: "Business Type",
+//     align: "left",
+//     field: "businessType",
+//     sortable: true,
+//   },
+//   {
+//     name: "Datecreated",
+//     required: true,
+//     label: "Date Created",
+//     align: "left",
+//     field: "DateCreated",
+//     sortable: true,
+//   },
+//   // Add more columns as needed
+// ];
 
 export const items = [
   {
@@ -49,17 +49,17 @@ export const items = [
     businessName: "CraftElevate",
     businessId: "#10004200211",
     businessType: "Individual Business",
-    VerificationStatus: "Approved",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    verificationStatus: "Approved",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-approved",
   },
   {
     id: 2,
     businessName: "InnovateEmpower",
     businessId: "#10004200211",
-    VerificationStatus: "Approved",
+    verificationStatus: "Approved",
     businessType: "Individual Business",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-approved",
   },
   {
@@ -67,8 +67,8 @@ export const items = [
     businessName: "ImagineBuild",
     businessId: "#10004200211",
     businessType: "Partnership",
-    VerificationStatus: "Pending Approval",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    verificationStatus: "Pending Approval",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-pending",
   },
   {
@@ -76,8 +76,8 @@ export const items = [
     businessName: "InnovateExpress",
     businessId: "#10004200211",
     businessType: "Registered Company",
-    VerificationStatus: "Approved",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    verificationStatus: "Approved",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-approved",
   },
   {
@@ -85,8 +85,8 @@ export const items = [
     businessName: "InspireInvent",
     businessId: "#10004200211",
     businessType: "Individual Business",
-    VerificationStatus: "Pending Approval",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    verificationStatus: "Pending Approval",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-pending",
   },
   {
@@ -94,8 +94,8 @@ export const items = [
     businessName: "InspiredRevolution",
     businessId: "#10004200211",
     businessType: "Registered Company",
-    VerificationStatus: "Queried",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    verificationStatus: "Queried",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-quaried",
   },
   {
@@ -104,7 +104,25 @@ export const items = [
     businessId: "#10004200211",
     businessType: "Individual Business",
     VerificationStatus: "Pending Approval",
-    DateCreated: "Aug 12  2020 9.37 AM",
+    dateCreated: "Aug 12  2020 9.37 AM",
     statusClass: "status-pending",
   },
 ];
+
+
+
+export const columns = [
+  {
+    name: 'businessName',
+    required: true,
+    label: 'Business Name',
+    align: 'left',
+    field: row => row.name,
+    format: val => `${val}`,
+    sortable: true
+  },
+  { name: 'businessId', align: 'center', label: 'Business ID', field: 'businessId', sortable: true },
+  { name: 'verificationStatus',align:"center", label: 'Verification Status', field: 'verificationStatus', sortable: true },
+  { name: 'businessType',align:"center", label: 'Business Type', field: 'businessType' },
+  { name: 'dateCreated',align:"left", label: 'Date Created', field: 'dateCreated' },
+]
