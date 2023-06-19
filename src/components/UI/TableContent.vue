@@ -67,8 +67,12 @@ export default {
           return "#000000";
       }
     },
-    handleRowClick(row) {
-      this.$router.push({ path: `businesspage/${row.id}` });
+    handleRowClick(item, index, event) {
+      console.log({ item, index,id:item });
+      this.$router.push({
+        path: `businesspage/${item.id}`,
+        props: { data: item },
+      });
     },
   },
 

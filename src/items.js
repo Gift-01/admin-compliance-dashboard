@@ -1,5 +1,6 @@
 export const columns = [
   {
+    id: 1,
     name: "businessName",
     required: true,
     label: "Business Name",
@@ -8,6 +9,7 @@ export const columns = [
     sortable: true,
   },
   {
+    id: 2,
     name: "businessId",
     required: true,
     label: "Business ID",
@@ -17,6 +19,7 @@ export const columns = [
   },
 
   {
+    id: 3,
     name: "VerificationStatus",
     required: true,
     label: "Verification Status",
@@ -57,6 +60,7 @@ export const columns = [
     // },
   },
   {
+    id: 4,
     name: "businessType",
     required: true,
     label: "Business Type",
@@ -65,6 +69,7 @@ export const columns = [
     sortable: true,
   },
   {
+    id: 5,
     name: "Datecreated",
     required: true,
     label: "Date Created",

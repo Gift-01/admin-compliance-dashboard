@@ -52,6 +52,10 @@ export default {
     this.queried = this.getQueried();
   },
   components: { TableContent, BusinessTableHeader },
+  async created() {
+    const response = await this.getBusinesses();
+    this.reponseData = response;
+  },
   data() {
     return {
       tab: "All businesses",
@@ -76,16 +80,27 @@ export default {
     },
     handleCustomChange(text) {
       this.inputValue = text;
-      console.log(this.handleSearch())
+      console.log(this.handleSearch());
     },
-    handleSearch(rows,inputValue){
+    handleSearch(rows, inputValue) {
       // if(inputValue){
       //  return rows.filter((item)=>item.businessName==inputValue)
       // }else{
       //   return rows
       // }
-      return rows
-    }
+      return rows;
+    },
+
+    async getBusinesses() {
+      try {
+        const response = await this.$api.get("/business/details");
+        this.rows = response.data;
+        console.log(response);
+        return response.data;
+      } catch (err) {
+        console.log(err);
+      }
+    },
   },
 };
 </script>

@@ -30,7 +30,9 @@
 <script>
 import MySelect from "src/components/UI/TextInput.vue";
 export default {
+
   components: { MySelect },
+  
 
   data() {
     return {
@@ -45,6 +47,18 @@ export default {
       ],
     };
   },
+
+  // methods: {
+  //   async getBusinesses() {
+  //     try {
+  //       const response = await this.$api.get("/business/details");
+  //       this.rows = response.data;
+  //       return response.data;
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   },
+  // },
 };
 </script>
 
