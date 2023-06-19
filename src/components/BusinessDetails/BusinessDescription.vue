@@ -31,7 +31,6 @@
 import MySelect from "src/components/UI/TextInput.vue";
 export default {
   components: { MySelect },
-
   data() {
     return {
       showText: false,

@@ -7,25 +7,25 @@
     <div class="hero_content">
       <HomeCard
         :imageSource="MoneyOne"
-        total="43"
+        :total="totalBusiness"
         heading="Total Businesses"
         :backgroundColor="'rgba(216, 243, 242, 1)'"
       />
       <HomeCard
         :imageSource="MoneyTwo"
-        total="32"
+        :total="approvedBusiness"
         heading="Approved Businesses"
         :backgroundColor="'rgba(209, 250, 223, 1)'"
       />
       <HomeCard
         :imageSource="MoneyThree"
-        total="11"
+        :total="pendingApproval"
         heading="Pending Approvals"
         :backgroundColor="'rgba(251, 235, 230, 1)'"
       />
     </div>
-    <SearchBar />
-    <BaseTable/>
+    <SearchBar :total="totalBusiness"/>
+    <BaseTable :rows="rows"/>
     <!-- <TableContent /> -->
   </div>
 </template>
@@ -50,15 +50,37 @@ export default defineComponent({
     HomeCard,
     MySelect,
   },
-
+created(){
+  this.getData()
+},
   data() {
     return {
       MoneyOne: MoneyOne,
       MoneyTwo: MoneyTwo,
       MoneyThree: MoneyThree,
       selectOptions: ["Today", "yesterday", "Last 7 days", "Custom Duration"],
+      rows:[],
+      totalBusiness:0,
+      approvedBusiness:0,
+      pendingApproval:0
     };
   },
+  methods:{
+    async getData(){
+                try{
+                    const response=await  this.$api.get('api/business/details')
+                const data= await response.data
+               const tableData=data.data
+                this.rows=tableData
+                this.totalBusiness=data.totalBusiness
+                this.approvedBusiness=data.approvedBusinesses
+                this.pendingApproval=data.pendingApproval
+                }catch(error){
+                    console.log(error)
+                }
+                
+            },
+  }
 });
 </script>
 

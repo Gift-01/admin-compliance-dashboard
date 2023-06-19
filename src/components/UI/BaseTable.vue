@@ -12,7 +12,7 @@
             {{ props.row.businessName }}
           </q-td>
           <q-td key="businessId" :props="props">
-              {{ props.row.businessId }}
+              {{ props.row.businessID }}
           </q-td>
           <q-td key="verificationStatus" :props="props">
             <q-chip v-if="props.row.verificationStatus=='Approved'" style='background-color: #ECFDF3 ;color:#027A48;'>
@@ -30,7 +30,7 @@
               {{ props.row.businessType }}
           </q-td>
           <q-td key="dateCreated" :props="props">
-              {{ props.row.dateCreated }}
+              {{props.row.dateCreated  }}
           </q-td>
         </q-tr>
       </template>
@@ -39,15 +39,16 @@
 </template>
 
 <script>
-import { columns, items as rows } from "../../items";
+import { columns } from "../../items";
+
     export default {
-        // created(){
-        //   this.getData()
-        // },
+    
+        props:{
+          rows:Array
+        },
         data(){
         return{
-            rows,
-            columns
+          columns
         }    
         },
         methods:{
@@ -57,16 +58,7 @@ import { columns, items as rows } from "../../items";
     //   to access the unique business name(which you will find arr.find()) in the business details page :this.$route.params.id
 
             },
-            async getData(){
-                try{
-                    const response=await  this.$api.get('api/business/details')
-                const data= await response.data
-                console.log(data)
-                }catch(error){
-                    console.log(error)
-                }
-                
-            },
+         
         }
     }
 </script>

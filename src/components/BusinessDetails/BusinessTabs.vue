@@ -47,6 +47,7 @@
               <q-uploader
                 url="http://localhost:4444/upload"
                 label="Upload Documents"
+                no-thumbnails
                 class="Button"
               />
             </div>

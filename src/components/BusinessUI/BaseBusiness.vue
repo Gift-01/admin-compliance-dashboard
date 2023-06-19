@@ -23,18 +23,18 @@
     <BusinessTableHeader @customChange="handleCustomChange($event)" />
     <q-tab-panels v-model="this.tab" animated>
       <q-tab-panel name="All businesses">
-        <BaseTable :rows="[]" :per-page-options="[10, 20, 30]" />
+        <BaseTable :rows="rows" :per-page-options="[10, 20, 30]" />
       </q-tab-panel>
 
       <q-tab-panel name="Approved businesses">
-        <BaseTable :rows="this.approved" />
+        <BaseTable :rows="[]" />
       </q-tab-panel>
 
       <q-tab-panel name="Pending Approval">
-        <BaseTable :rows="this.pending" />
+        <BaseTable :rows="this.getPending()" />
       </q-tab-panel>
       <q-tab-panel name="Queried Approvals">
-        <BaseTable :rows="this.queried" />
+        <BaseTable :rows="this.getQueried()" />
       </q-tab-panel>
     </q-tab-panels>
   </div>
@@ -43,37 +43,33 @@
 <script>
 // import TableContent from "../UI/TableContent.vue";
 import BusinessTableHeader from "src/components/BusinessUI/BusinessTableHeader.vue";
-import { items as rows } from "../../items";
+// import { items as rows } from "../../items";
 import BaseTable from "../UI/BaseTable.vue";
 
 export default {
-  beforeMount() {
-    this.approved = this.getApproved();
-    this.pending = this.getPending();
-    this.queried = this.getQueried();
-  },
+   created(){
+      this.getData()
+   },
   components: {  BusinessTableHeader, BaseTable },
   data() {
     return {
       tab: "All businesses",
-      approved: "",
-      pending: "",
-      queried: "",
       inputValue: "",
-      row: this.handleSearch(rows),
+      rows:[]
+      // row: this.handleSearch(rows),
     };
   },
   methods: {
     getApproved() {
-      return rows.filter((item) => item.verificationStatus == "Approved");
+      return this.rows.filter((item) => item.verificationStatus == "approved");
     },
     getPending() {
-      return rows.filter(
-        (item) => item.verificationStatus == "Pending Approval"
+      return this.rows.filter(
+        (item) => item.verificationStatus == "pending"
       );
     },
     getQueried() {
-      return rows.filter((item) => item.verificationStatus == "Queried");
+      return this.rows.filter((item) => item.verificationStatus == "queried");
     },
     handleCustomChange(text) {
       this.inputValue = text;
@@ -87,6 +83,16 @@ export default {
       // }
       return rows
     },
+    async getData(){
+                try{
+                    const response=await  this.$api.get('api/business/details')
+                const data= await response.data.data
+                this.rows=data
+                }catch(error){
+                    console.log(error)
+                }
+                
+            },
  
   },
 };
