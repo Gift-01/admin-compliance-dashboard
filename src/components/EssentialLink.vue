@@ -1,11 +1,11 @@
 <template>
-  <q-item clickable tag="a" :href="link">
+  <q-item clickable :to="link"  @click="active" active-class="active"  class="sidebar">
     <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
 
-    <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
+    <q-item-section class="nav-text">
+      <q-item-label >{{ title }}</q-item-label>
       <q-item-label caption>{{ caption }}</q-item-label>
     </q-item-section>
   </q-item>
@@ -37,5 +37,24 @@ export default defineComponent({
       default: "",
     },
   },
+  data(){
+    return{
+      active:true
+    }
+  }
+
 });
 </script>
+
+<style lang="scss" scoped>
+   .active{
+  background-color: #FFFFFF !important;
+  border-left: 2px solid #102051;
+  color: #222222;
+  font-weight: 600;
+}
+.nav-text{
+  margin-left: -1rem;
+}
+
+</style>

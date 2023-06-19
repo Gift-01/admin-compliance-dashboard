@@ -27,7 +27,7 @@
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered >
-      <q-list>
+      <q-list class="sidenav">
         <q-item-label header>
           <div class="img">
             <img :src="Logo" alt="logo" />
@@ -68,7 +68,7 @@ const linksList = [
     title: "Business",
     // caption: "Business",
     icon: "work",
-    link: "#/businesspage",
+    link: "/businesses",
   },
 
   {
@@ -166,7 +166,9 @@ img {
   background-color: red;
   border-radius: 50%;
 }
-.bb{
-  border-bottom: 1px solid red;
+
+.sidenav{
+  padding-inline: 2rem;
 }
+
 </style>
