@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { items, columns } from "../../items";
+// import { items, columns } from "../../items";
 
 export default {
   props: {

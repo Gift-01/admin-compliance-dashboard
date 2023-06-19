@@ -6,8 +6,7 @@
           <th class="text-left">Document Title</th>
           <th>Document</th>
           <th>Date</th>
-          <th class="text-right">Actions</th>
-          <th></th>
+          <th class="">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -21,10 +20,10 @@
             </a>
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right">view</td>
-          <td style="color: #dc3030">
+          <td class="text-right"><div class="test">view <span class="text-red"><BusinessPopUp /></span> </div></td>
+          <!-- <td style="color: #dc3030">
             <BusinessPopUp />
-          </td>
+          </td> -->
         </tr>
         <tr>
           <td class="text-left">Certificate of Incoporation</td>
@@ -36,10 +35,10 @@
             </a>
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right">view</td>
-          <td style="color: #dc3030">
+          <td class="text-right"><div class="test">view <span class="text-red"><BusinessPopUp /></span> </div></td>
+          <!-- <td style="color: #dc3030">
             <BusinessPopUp />
-          </td>
+          </td> -->
         </tr>
         <tr>
           <td class="text-left">Form CAC 1.1 or CAC 2/2A</td>
@@ -51,10 +50,10 @@
             </a>
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right">view</td>
-          <td style="color: #dc3030">
+          <td class="text-right"> <div class="test">view <span class="text-red"><BusinessPopUp /></span> </div> </td>
+          <!-- <td style="color: #dc3030">
             <BusinessPopUp />
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </q-markup-table>
@@ -67,3 +66,13 @@ export default {
   components: { BusinessPopUp },
 };
 </script>
+<style lang="scss" scoped>
+  .test{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-red{
+    color:"#dc3030"
+  }
+</style>

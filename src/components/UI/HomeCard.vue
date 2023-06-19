@@ -20,7 +20,7 @@ export default defineComponent({
       required: true,
     },
     total: {
-      type: String,
+      type: Number,
       required: true,
     },
     imageSource: {

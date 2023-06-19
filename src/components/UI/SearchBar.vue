@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <h6>Businesses: 34</h6>
+    <h6>Businesses: {{ total }}</h6>
     <q-input
       v-model="filter"
       debounce="300"
@@ -19,6 +19,9 @@
 
 <script>
 export default {
+  props:{
+    total:Number
+  },
   data() {
     return {
       filter: "",
