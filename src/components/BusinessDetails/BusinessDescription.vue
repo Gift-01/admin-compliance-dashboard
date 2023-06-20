@@ -2,7 +2,7 @@
   <div class="Description-container">
     <div class="wrapper">
       <div class="mini-wrapper">
-        <div v-if="active">
+        <div>
           <p class="Text">Craft Elevate</p>
         </div>
         <div @mouseover="showText = true" @mouseleave="showText = false">
@@ -30,7 +30,6 @@
 <script>
 import MySelect from "src/components/UI/TextInput.vue";
 export default {
-
   components: { MySelect },
   data() {
     return {
@@ -46,17 +45,15 @@ export default {
     };
   },
 
-  // methods: {
-  //   async getBusinesses() {
-  //     try {
-  //       const response = await this.$api.get("/business/details");
-  //       this.rows = response.data;
-  //       return response.data;
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   },
-  // },
+  async getData() {
+    try {
+      const response = await this.$api.get("api/business/details");
+      const data = await response.data.data;
+      this.p = data;
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 </script>
 

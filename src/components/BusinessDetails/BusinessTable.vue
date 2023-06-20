@@ -20,10 +20,11 @@
             </a>
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right"><div class="test">view <span class="text-red"><BusinessPopUp /></span> </div></td>
-          <!-- <td style="color: #dc3030">
-            <BusinessPopUp />
-          </td> -->
+          <td class="text-right">
+            <div class="test">
+              view <span class="text-red"><BusinessPopUp /></span>
+            </div>
+          </td>
         </tr>
         <tr>
           <td class="text-left">Certificate of Incoporation</td>
@@ -35,10 +36,11 @@
             </a>
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right"><div class="test">view <span class="text-red"><BusinessPopUp /></span> </div></td>
-          <!-- <td style="color: #dc3030">
-            <BusinessPopUp />
-          </td> -->
+          <td class="text-right">
+            <div class="test">
+              view <span class="text-red"><BusinessPopUp /></span>
+            </div>
+          </td>
         </tr>
         <tr>
           <td class="text-left">Form CAC 1.1 or CAC 2/2A</td>
@@ -50,10 +52,11 @@
             </a>
           </td>
           <td class="text-right">Aug 12,2020 9:37am</td>
-          <td class="text-right"> <div class="test">view <span class="text-red"><BusinessPopUp /></span> </div> </td>
-          <!-- <td style="color: #dc3030">
-            <BusinessPopUp />
-          </td> -->
+          <td class="text-right">
+            <div class="test">
+              view <span class="text-red"><BusinessPopUp /></span>
+            </div>
+          </td>
         </tr>
       </tbody>
     </q-markup-table>
@@ -67,12 +70,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-  .test{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .text-red{
-    color:"#dc3030"
-  }
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-red {
+  color: "#dc3030";
+}
 </style>

@@ -84,11 +84,6 @@ export default {
   // height: 43px;
 }
 
-.q-uploader__list scroll {
-  padding: 1px !important;
-  min-height: 1px !important;
-}
-
 .verification-documents {
   display: flex;
   flex-direction: row;
