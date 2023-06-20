@@ -3,29 +3,29 @@
     <div style="width: 50%">
       <div>
         <i class="title"> Business Name</i>
-        <p class="text">CraftElavate</p>
+        <p class="text"> {{ info.businessName }}</p>
       </div>
       <div>
         <i class="title">Date created</i>
-        <p class="text">Aug 12,2020 9:37am</p>
+        <p class="text">{{ info.dateCreated }} 9:37am</p>
       </div>
       <div>
         <i class="title">Business Size</i>
-        <p class="text">10-20 people</p>
+        <p class="text"> {{ info.businessSize }}</p>
       </div>
       <div>
         <i class="title">Business Category</i>
-        <p class="text">Agricultural investment</p>
+        <p class="text">{{ info.businessCategory }}</p>
       </div>
     </div>
     <div style="width: 50%">
       <div>
         <i class="title">Business ID</i>
-        <p class="text">#10004200211</p>
+        <p class="text">{{ info.businessID }}</p>
       </div>
       <div>
         <i class="title">Business Type</i>
-        <p class="text">Individual Type</p>
+        <p class="text">{{ info.businessType }}</p>
       </div>
       <div>
         <i class="title">Industry Type</i>
@@ -33,12 +33,18 @@
       </div>
       <div>
         <i class="title">Business Address</i>
-        <p class="text">12/15 Allen Avenue street Lekki,Lagos.</p>
+        <p class="text">{{ info.businessAddress }}</p>
       </div>
     </div>
   </div>
 </template>
-
+<script>
+export default{
+  props:{
+    info:Object
+  }
+}
+</script>
 <style lang="scss" scoped>
 .details {
   display: flex;

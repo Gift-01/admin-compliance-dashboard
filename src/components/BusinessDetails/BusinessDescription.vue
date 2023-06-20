@@ -2,14 +2,20 @@
   <div class="Description-container">
     <div class="wrapper">
       <div class="mini-wrapper">
-        <div v-if="active">
-          <p class="Text">Craft Elevate</p>
+        <div >
+          <p class="Text">{{ name }}</p>
         </div>
-        <div @mouseover="showText = true" @mouseleave="showText = false">
-          <p>Ourpass/SDFGHK./HJKO765432456</p>
+        <div class="copy-text" >
+          <p ref="mylink">{{ ourpassId }}</p>
+          <q-btn
+          flat
+          @click="copyId(ourpassId)"
+          icon="fas fa-copy fa-xs"
+          class="copy"
+    />
         </div>
-        <p v-if="showText">Copy</p>
-        <q-badge label="Queried" class="Button" />
+        <input type="hidden" id="ourpassId" :value="ourpassId">
+        <q-badge :label='status' class="Button" />
       </div>
       <div class="sub-wrapper">
         <p class="text-wrapper">Approval Status</p>
@@ -19,9 +25,7 @@
     <div class="description">
       <i>Business Description</i>
       <p class="Text">
-        Ourpass lending product to merchants. However, we also do not have all
-        the time to work on a high tech feature for this, we will be coming up
-        with a low tech implementation for pilot stage.
+        {{ description }}
       </p>
     </div>
   </div>
@@ -29,7 +33,14 @@
 
 <script>
 import MySelect from "src/components/UI/TextInput.vue";
+import { copyToClipboard } from 'quasar'
 export default {
+
+  props:{
+    description:String,
+    name:String,
+    status:String
+  },
   components: { MySelect },
   data() {
     return {
@@ -42,8 +53,26 @@ export default {
         "Queried Document",
         "Awaiting Document Submission",
       ],
+      ourpassId:'Ourpass/SDFGHK./HJKO765432456'
     };
   },
+  methods:{
+    copyId(ourpasskey){
+      copyToClipboard(ourpasskey)
+  .then(() => {
+    // success!
+    this.$q.notify({
+      type:"positive",
+      message:"ourpasskey sucessfully copied to clipboard",
+      position:"center",
+      timeout:10
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+        },
+  }
 };
 </script>
 
@@ -107,5 +136,14 @@ export default {
   .sub-wrapper {
     gap: 35px;
   }
+}
+.copy-text{
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  align-items: center;
+}
+.copy{
+  margin-top: -1.3rem;
 }
 </style>
