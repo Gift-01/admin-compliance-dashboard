@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <BusinessHeader />
-    <BusinessDescription />
-    <BusinessTabs />
+    <BusinessDescription :description="description" :name="name"  :status="status" />
+    <BusinessTabs :name="name" :date="date" :info='info' />
   </div>
 </template>
 
@@ -13,13 +13,40 @@ import BusinessTabs from "src/components/BusinessDetails/BusinessTabs.vue";
 
 export default {
   components: { BusinessHeader, BusinessDescription, BusinessTabs },
-  mounted() {
-    this.getid();
+  created() {
+    this.getData()
   },
+   data(){
+    return{
+      description:'',
+      name:'',
+      status:'',
+      date:'',
+      info:{}
+      
+    }
+   
+   },
   methods: {
-    getid() {
-      console.log(this.$route.params.id);
-    },
+    
+ 
+    async getData(){
+                try{
+                    const response=await  this.$api.get('api/business/details')
+                const data= await response.data.data
+                const detailsData=data.find(item=>item.businessName==this.$route.params.id)
+                this.info=detailsData
+                 console.log(detailsData)
+                 this.description=detailsData.businessDescription
+                 this.name=detailsData.businessName
+                 this.status=detailsData.verificationStatus
+                 this.date=detailsData.dateCreated
+                }catch(error){
+                    console.log(error)
+                }
+                
+            },
+ 
   },
 };
 </script>

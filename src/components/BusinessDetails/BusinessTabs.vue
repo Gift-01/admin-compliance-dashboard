@@ -33,7 +33,7 @@
               Business Details
             </div>
             <q-separator />
-            <BusinessInfo />
+            <BusinessInfo :name="name" :date="date" :info="info" />
             <q-separator />
           </q-tab-panel>
           <q-tab-panel name="verification-documents">
@@ -65,6 +65,11 @@ import BusinessInfo from "./BusinessInfo.vue";
 
 export default {
   components: { BusinessTable, BusinessInfo },
+  props:{
+    name:String,
+    date:String,
+    info:Object,
+  },
   data() {
     return {
       tab: "business-details",
